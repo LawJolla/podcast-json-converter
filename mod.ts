@@ -110,7 +110,9 @@ function convertToRSS(podcastData: Root, latestEpisodesMap?: Map<string, LatestE
     ]
   });
 
-  podcast.episodes.slice(podcast.episodes.length - 10, podcast.episodes.length - 8).forEach(episode => {
+  podcast.episodes
+  // .slice(podcast.episodes.length - 10, podcast.episodes.length - 8)
+  .forEach(episode => {
     const pubDate = new Date(episode.published);
     feed.item({
       title: episode.title,
